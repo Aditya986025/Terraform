@@ -1,11 +1,11 @@
 provider "aws" {
-    region = eu-north-1
+    region = "eu-north-1"
 }
 
 resource "aws_instance" "my-instance" {
     ami           = var.ami
     instance_type = var.instance_type
-    vpc_security_group_ids = [aws_security_group_sg.id]
+    vpc_security_group_ids = [aws_security_group.aws_sg.id]
 
     user_data = <<-EOF
     #!/bin/bash
