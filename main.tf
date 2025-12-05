@@ -38,9 +38,9 @@ resource "aws_security_group" "aws_sg" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 
-##end
-
     tags = {
         env = var.env
     }
 }
+
+##end
