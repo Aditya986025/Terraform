@@ -61,7 +61,7 @@ resource "aws_lb_listener" "http" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.my_tg.arn
+    target_group_arn = aws_lb_target_group.my_tg.arn          #-----------> In Auto Scalling We refere this to connect (1)
   }
 }
 
@@ -84,7 +84,7 @@ resource "aws_autoscaling_group" "my_asg" {
     "subnet-0bd2a6db82585a589"
   ]
 
-  target_group_arns = [aws_lb_target_group.my_tg.arn]
+  target_group_arns = [aws_lb_target_group.my_tg.arn]        #---------> Refere (1)   ....line no.64
 
   tag {
     key                 = "Name"
