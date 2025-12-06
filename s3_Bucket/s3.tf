@@ -12,7 +12,7 @@ tags = {
 }
 }
 
-## Block Public Access
+## Block Public Access ---> this option present in s3 
 resource "aws_s3_bucket_public_access_block" "public_access" {
   bucket = aws_s3_bucket.bucket1.id
 
@@ -22,12 +22,7 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
   restrict_public_buckets = false
 }
 
-## acl
-resource "aws_s3_bucket_acl" "bucket1_acl" {
-    bucket = aws_s3_bucket.bucket1.id
-    acl    = "public-read"
-}
-
+## for acl we have to write multiple things
 ## Versioning
 resource "aws_s3_bucket_versioning" "my_version" {
   bucket = aws_s3_bucket.bucket1.id 
