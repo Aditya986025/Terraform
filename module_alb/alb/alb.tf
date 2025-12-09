@@ -1,12 +1,9 @@
 resource "aws_lb" "my_alb" {
-  name               = "my-alb"
+  name               = var.name
   internal           = false
   load_balancer_type = "application"
-  security_groups    = ["sg-09040ae4cd8504987"]
-  subnets            = [
-    "subnet-0e40e13af310eb0f0",
-    "subnet-0bd2a6db82585a589"
-  ]
+  security_groups    = var.security_group
+  subnets            = var.subnets
 }
 
 # Listener
