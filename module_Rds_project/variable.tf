@@ -1,5 +1,5 @@
 variable "engine_version" {
-    default = "11.4.6"
+    default = "11.4.8"
 }
 
 variable "username" {
