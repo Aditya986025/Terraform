@@ -4,10 +4,10 @@ provider "aws" {
    
     resource "aws_db_instance" "my_rds" {
     
-     engine               = "mariadb"
-      engine_version       = "11.4.5"
-      instance_class       = "db.t3.micro"
-      allocated_storage    = 5
+      engine               = "mariadb"
+      engine_version       =  var.engine_version
+      instance_class       =  var.instance_class
+      allocated_storage    =  5
       db_name              = "my_db"
       username             = var.username     #-------> Value refer from variable.tf file
       password             = var.password     #-------> Value refer from variable.tf file
